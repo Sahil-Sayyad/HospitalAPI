@@ -32,18 +32,18 @@ govt for testing and quarantine + well being of COVID-19 patients <b>
 
 ### Usage
 <b>Instructions how to use this Hospital API Routes </b> <br><br>
--  <b> 1. &nbsp; /doctors/register   </b>
+-  <b> 1. &nbsp; /doctors/register  method should be [POST] </b>
     <br>----<i> Fill data with email , name , password, confirmPassword . </i><br><br>
--  <b> 2. &nbsp; /doctors/login </b>
+-  <b> 2. &nbsp; /doctors/login  method should be [POST] </b>
    <br>----<i>  Fill data with registered email and password. </i><br><br>
--  <b> 3. &nbsp; /patients/register </b>
+-  <b> 3. &nbsp; /patients/register method should be [POST]  </b>
    <br>----<i>  Fill data with name , age, phone, address , regestered doctorEmail. </i><br><br>
--  <b> 4. &nbsp; /patients/:id/create_report </b>
+-  <b> 4. &nbsp; /patients/:id/create_reportmethod should be [POST]  </b>
    <br>----<i> Fill data with status , date and  status can be [Negative, Travelled-Quarantine, Symptoms-Quarantine,
 Positive-Admit] and send patient id in params.</i> <br><br>
--  <b> 5. &nbsp; /patients/:id/all_reports </b>
+-  <b> 5. &nbsp; /patients/:id/all_reports method should be [GET] </b>
    <br>----<i>  Only send the patient id in params. </i><br><br>
--  <b> 6. &nbsp; /reports/:id/status </b>
+-  <b> 6. &nbsp; /reports/:id/status method should be [GET] </b>
    <br>----<i>  Fill data with status and send the patient id in params.</i> <br><br>
 
 
