@@ -58,6 +58,6 @@ Positive-Admit] and send patient id in params.</i> <br><br>
 ## Author
 
 - Name: Sahil Sayyad
-- GitHub: [!](https://github.com/Sahil-Sayyad)]
+- GitHub: <a><b>https://github.com/Sahil-Sayyad</a></b>
 - Email: []
 - Website: []
