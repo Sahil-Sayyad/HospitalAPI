@@ -126,9 +126,27 @@ module.exports.Create = async (req, res) => {
     });
   }
 };
-/*5./patients/:id/all_reports  ---> fecths all the reports of a patients filtered by a specfic status */
+/*5./patients/:id/all_reports  ---> fecths all the reports of a patients */
 //fetching all reports of patients
 module.exports.allReports = async (req, res) => {
+  try {
+    let patientID = req.params.id;
+    let patient = await Patient.findById(patientID).populate("reports");
+    return res.status(201).json({
+      message: "List Of All Reports",
+      data: patient.reports,
+    });
+  } catch (err) {
+    return res.status(500).json({
+      message: "Something went wrong while creating record ",
+      data: { err },
+    });
+  }
+};
+/*6./patients/:id/status  ---> fecths all the reports of a patients by  specific stutus  
+*/
+//fetching all reports of patients
+module.exports.Status = async (req, res) => {
   try {
     let patientID = req.params.id;
     const status = req.body;
@@ -140,7 +158,7 @@ module.exports.allReports = async (req, res) => {
       }
     }
     return res.status(201).json({
-      message: "List Of All Reports",
+      message: "List Of All SpecificReports",
       data: formattedReport,
     });
   } catch (err) {
