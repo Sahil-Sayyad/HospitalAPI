@@ -22,12 +22,11 @@ module.exports.Register = async (req, res) => {
         data: {},
       });
     }
-    // check if the patient info already exists or not using phone no.
+    // check if the patient info already exists or not and using phone no.
     let patient = await Patient.findOne({ phone: phone });
 
     if (!patient) {
       let doctor = await Doctor.findOne({ email: doctorEmail });
-      //if everything goes well then create docter
       const createdPatient = await Patient.create({
         phone,
         name,
@@ -57,7 +56,7 @@ module.exports.Register = async (req, res) => {
   }
 };
 /*4./patients/:id/create_report ---> created report of patient with test name*/
-//create patient report by doctor
+//create patients report by doctor
 module.exports.Create = async (req, res) => {
   try {
     let isTrue = false;
